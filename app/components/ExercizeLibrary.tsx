@@ -70,7 +70,7 @@ if (loading) {
 
   return (
     <div id="library" className="min-h-screen bg-[#0f0f0f] text-white px-4 sm:px-6 lg:px-8 py-10">
-      {/* Header */}
+
       <div className="mx-auto mb-10">
         <h1 className="text-4xl font-bold tracking-tight">THE LIBRARY</h1>
         <p className="mt-2 text-gray-400 text-lg">
@@ -78,7 +78,7 @@ if (loading) {
         </p>
       </div>
 
-      {/* 3 rows × 4 columns grid */}
+    
       <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
         {exercises.map((exercise) => (
 
@@ -88,7 +88,7 @@ if (loading) {
                 
                 className="bg-[#1a1a1a] rounded-2xl overflow-hidden border border-white/5 hover:border-white/10 transition-all duration-300 hover:shadow-xl hover:shadow-black/40 group"
               >
-            {/* Image */}
+
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
                 src={exercise.image}
@@ -97,13 +97,13 @@ if (loading) {
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
               />
-              {/* Subtle gradient overlay for better text readability if needed */}
+
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
 
-            {/* Content */}
+
             <div className="p-5">
-              {/* Muscle group tags */}
+
               <div className="flex flex-wrap gap-2 mb-3">
                 {exercise.muscleGroups.map((group) => (
                   <span
