@@ -192,7 +192,7 @@ export default function ExerciseDetailPage() {
                   addToTodayPlan(exercise);
                   
                 }}
-                disabled={isInTodayPlan(exercise.id)}
+                // disabled={isInTodayPlan(exercise.id)}
                 className={`flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-colors ${
                   isInTodayPlan(exercise.id)
                     ? "bg-gray-600 text-gray-300 cursor-not-allowed"
@@ -218,7 +218,6 @@ export default function ExerciseDetailPage() {
               <button 
               onClick={() => {
                   addToSaved(exercise);
-                  
                 }}
                 disabled={isInSaved(exercise.id)}
               

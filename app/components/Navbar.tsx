@@ -19,7 +19,7 @@ export default function Navbar() {
       <div className="mx-auto flex h-full max-w-[1120px] items-center px-5">
         {/* Logo */}
         <Link
-          href="/workouts"
+          href="/"
           className="flex items-center gap-2"
         >
           <Dumbbell
@@ -36,7 +36,7 @@ export default function Navbar() {
         {/* Navigation */}
         <nav className="ml-auto mr-auto flex h-full items-center gap-1">
           <Link
-            href="/workouts"
+            href="/"
             className={`rounded-xl px-4 py-2 text-[13px] font-semibold transition ${
               isWorkouts
                 ? "bg-[#181b20] text-[#c8ff24]"

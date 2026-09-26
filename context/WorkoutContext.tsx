@@ -7,6 +7,7 @@ import {
   useEffect,
   ReactNode,
 } from "react";
+import { toast } from "react-toastify";
 
 export interface Exercise {
   id: number;
@@ -59,16 +60,38 @@ export function WorkoutProvider({ children }: { children: ReactNode }) {
     localStorage.setItem("savedExercises", JSON.stringify(saved));
   }, [saved]);
 
-  const addToTodayPlan = (exercise: Exercise) => {
-    setTodayPlan((prev) => {
-      if (prev.some((e) => e.id === exercise.id)) return prev; // already exists
-      if (prev.length >= 5) {
-        alert("Cap of five lifts for today. Finish them, then load more.");
-        return prev;
-      }
-      return [...prev, exercise];
+const addToTodayPlan = (exercise: Exercise) => {
+  setTodayPlan((prev) => {
+    // Already exists
+    if (prev.some((e) => e.id === exercise.id)) {
+      toast.info("This exercise is already in today’s plan", {
+        position: "top-right",
+        autoClose: 3000,
+        theme: "dark",
+      });
+      return prev;
+    }
+
+    // Cap of 5
+    if (prev.length >= 5) {
+      toast.warning("Cap of five lifts for today. Finish them, then load more.", {
+        position: "top-right",
+        autoClose: 4000,
+        theme: "dark",
+      });
+      return prev;
+    }
+
+    // Successfully added
+    toast.success(`${exercise.name} added to today’s plan!`, {
+      position: "top-right",
+      autoClose: 2500,
+      theme: "dark",
     });
-  };
+
+    return [...prev, exercise];
+  });
+};
 
   const removeFromTodayPlan = (id: number) => {
     setTodayPlan((prev) => prev.filter((e) => e.id !== id));
