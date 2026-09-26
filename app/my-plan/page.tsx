@@ -8,7 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 type Tab = "today" | "saved";
-type SortOption = "duration" | "calories" | "rating" | "name";
+type SortOption = "duration" | "calories" | "rating" ;
 
 export default function MyPlanPage() {
   const {
@@ -102,7 +102,6 @@ export default function MyPlanPage() {
               <option value="duration">Duration</option>
               <option value="calories">Calories</option>
               <option value="rating">Rating</option>
-              <option value="name">Name</option>
             </select>
           </div>
         </div>
