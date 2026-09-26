@@ -30,8 +30,7 @@ export default function MyPlanPage() {
         return b.caloriesBurned - a.caloriesBurned;
       case "rating":
         return b.rating - a.rating;
-      case "name":
-        return a.name.localeCompare(b.name);
+
       default:
         return 0;
     }
@@ -110,9 +109,18 @@ export default function MyPlanPage() {
         <div className="mt-6 space-y-4">
           {sortedList.length === 0 ? (
             <div className="text-center py-16 text-gray-500">
+              <h2>Nothing here Yet</h2>
               {activeTab === "today"
-                ? "No exercises in today’s plan yet."
-                : "No saved exercises yet."}
+                ? "Browse the library and add a lift to get today moving"
+                : "Browse the library and add a lift to get today moving"}
+                 <div className="mt-5">
+            <Link
+              href="/"
+              className="inline-flex min-h-[42px] items-center justify-center rounded-2xl border border-[#d2ff64] bg-[#b5f52b] px-4 py-2.5 text-sm font-medium text-[#10120b] transition-colors hover:bg-[#c6ff50] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b5ff27] focus-visible:ring-offset-2 focus-visible:ring-offset-[#191b23]"
+            >
+              Go to workouts
+            </Link>
+          </div>
             </div>
           ) : (
             sortedList.map((exercise) => (

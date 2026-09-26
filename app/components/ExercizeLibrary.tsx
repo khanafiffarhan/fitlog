@@ -60,7 +60,7 @@ export default function ExerciseLibrary() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0f0f0f] text-white px-4 sm:px-6 lg:px-8 py-10">
+    <div id="library" className="min-h-screen bg-[#0f0f0f] text-white px-4 sm:px-6 lg:px-8 py-10">
       {/* Header */}
       <div className="max-w-7xl mx-auto mb-10">
         <h1 className="text-4xl font-bold tracking-tight">THE LIBRARY</h1>

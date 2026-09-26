@@ -17,14 +17,12 @@ export default function HomePage() {
           </h1>
 
           <p className="mt-5 max-w-[440px] text-base leading-6 text-[#c0c4d0] sm:text-[17px]">
-            FitLog is a dark, no-nonsense gym companion: pick a lift,
-            lock it into today&apos;s plan, and watch the week&apos;s
-            work add up.
+            FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into today's plan, and watch the week's work add up.
           </p>
 
           <div className="mt-5">
             <Link
-              href="/workouts"
+              href="#library"
               className="inline-flex min-h-[42px] items-center justify-center rounded-2xl border border-[#d2ff64] bg-[#b5f52b] px-4 py-2.5 text-sm font-medium text-[#10120b] transition-colors hover:bg-[#c6ff50] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b5ff27] focus-visible:ring-offset-2 focus-visible:ring-offset-[#191b23]"
             >
               Browse Workouts
