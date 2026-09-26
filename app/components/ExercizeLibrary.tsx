@@ -71,7 +71,7 @@ if (loading) {
   return (
     <div id="library" className="min-h-screen bg-[#0f0f0f] text-white px-4 sm:px-6 lg:px-8 py-10">
       {/* Header */}
-      <div className="max-w-7xl mx-auto mb-10">
+      <div className="mx-auto mb-10">
         <h1 className="text-4xl font-bold tracking-tight">THE LIBRARY</h1>
         <p className="mt-2 text-gray-400 text-lg">
           Twelve lifts covering every major muscle group.
@@ -79,7 +79,7 @@ if (loading) {
       </div>
 
       {/* 3 rows × 4 columns grid */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
         {exercises.map((exercise) => (
 
             <Link href={`/exercise/${exercise.id}`} key={exercise.id}>

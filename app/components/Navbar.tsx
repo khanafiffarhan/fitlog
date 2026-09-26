@@ -19,7 +19,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 h-[68px] border-b border-[#25262b] bg-[#0d0e12]">
-      <div className="m-auto flex h-full max-w-[1120px] items-center px-5">
+      <div className="m-auto flex h-full items-center px-5">
         {/* Logo */}
         <button
           onClick={() => setIsOpen(!isOpen)}
