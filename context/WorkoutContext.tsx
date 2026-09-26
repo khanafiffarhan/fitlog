@@ -61,35 +61,35 @@ export function WorkoutProvider({ children }: { children: ReactNode }) {
   }, [saved]);
 
 const addToTodayPlan = (exercise: Exercise) => {
-  setTodayPlan((prev) => {
-    // Already exists
-    if (prev.some((e) => e.id === exercise.id)) {
-      toast.info("This exercise is already in today’s plan", {
-        position: "top-right",
-        autoClose: 3000,
-        theme: "dark",
-      });
-      return prev;
-    }
+  // Check conditions first (outside of setState)
+  const alreadyExists = todayPlan.some((e) => e.id === exercise.id);
 
-    // Cap of 5
-    if (prev.length >= 5) {
-      toast.warning("Cap of five lifts for today. Finish them, then load more.", {
-        position: "top-right",
-        autoClose: 4000,
-        theme: "dark",
-      });
-      return prev;
-    }
-
-    // Successfully added
-    toast.success(`${exercise.name} added to today’s plan!`, {
+  if (alreadyExists) {
+    toast.info("This exercise is already in today’s plan", {
       position: "top-right",
-      autoClose: 2500,
+      autoClose: 3000,
       theme: "dark",
     });
+    return; // stop here
+  }
 
-    return [...prev, exercise];
+  if (todayPlan.length >= 5) {
+    toast.warning("Cap of five lifts for today. Finish them, then load more.", {
+      position: "top-right",
+      autoClose: 4000,
+      theme: "dark",
+    });
+    return;
+  }
+
+  // Only update state if everything is fine
+  setTodayPlan((prev) => [...prev, exercise]);
+
+  // Success toast (only fires once)
+  toast.success(`${exercise.name} added to today’s plan!`, {
+    position: "top-right",
+    autoClose: 2500,
+    theme: "dark",
   });
 };
 
@@ -102,12 +102,29 @@ const addToTodayPlan = (exercise: Exercise) => {
     removeFromTodayPlan(id);
   };
 
-  const addToSaved = (exercise: Exercise) => {
-    setSaved((prev) => {
-      if (prev.some((e) => e.id === exercise.id)) return prev;
-      return [...prev, exercise];
+const addToSaved = (exercise: Exercise) => {
+  // Check first (outside of setState)
+  const alreadyExists = saved.some((e) => e.id === exercise.id);
+
+  if (alreadyExists) {
+    toast.info("This exercise is already saved", {
+      position: "top-right",
+      autoClose: 3000,
+      theme: "dark",
     });
-  };
+    return;
+  }
+
+  // Add to saved
+  setSaved((prev) => [...prev, exercise]);
+
+  // Success toast
+  toast.success(`${exercise.name} saved for later!`, {
+    position: "top-right",
+    autoClose: 2500,
+    theme: "dark",
+  });
+};
 
   const removeFromSaved = (id: number) => {
     setSaved((prev) => prev.filter((e) => e.id !== id));
