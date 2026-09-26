@@ -219,7 +219,7 @@ export default function ExerciseDetailPage() {
               onClick={() => {
                   addToSaved(exercise);
                 }}
-                disabled={isInSaved(exercise.id)}
+                // disabled={isInSaved(exercise.id)}
               
               className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
                 <svg
