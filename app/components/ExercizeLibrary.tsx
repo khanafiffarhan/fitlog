@@ -43,13 +43,22 @@ export default function ExerciseLibrary() {
     fetchExercises();
   }, []);
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-[#0f0f0f] flex items-center justify-center">
-        <div className="text-white text-xl">Loading library...</div>
+if (loading) {
+  return (
+    <div className="min-h-screen bg-[#0f0f0f] flex flex-col items-center justify-center gap-5">
+      {/* Spinner */}
+      <div className="relative w-14 h-14">
+        <div className="absolute inset-0 rounded-full border-4 border-[#c8ff24]/20"></div>
+        <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-[#c8ff24] animate-spin"></div>
       </div>
-    );
-  }
+
+      {/* Text */}
+      <p className="text-[#e4e4e7] text-lg font-medium tracking-wide animate-pulse">
+        Loading library...
+      </p>
+    </div>
+  );
+}
 
   if (error) {
     return (

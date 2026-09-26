@@ -4,6 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useWorkout } from "@/context/WorkoutContext";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 type Tab = "today" | "saved";
 type SortOption = "duration" | "calories" | "rating" | "name";

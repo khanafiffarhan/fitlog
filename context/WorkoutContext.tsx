@@ -93,9 +93,20 @@ const addToTodayPlan = (exercise: Exercise) => {
   });
 };
 
-  const removeFromTodayPlan = (id: number) => {
-    setTodayPlan((prev) => prev.filter((e) => e.id !== id));
-  };
+const removeFromTodayPlan = (id: number) => {
+  const exercise = todayPlan.find((e) => e.id === id);
+  
+  setTodayPlan((prev) => prev.filter((e) => e.id !== id));
+
+  toast.success(
+    exercise ? `${exercise.name} removed from today’s plan` : "Exercise removed",
+    {
+      position: "top-right",
+      autoClose: 2500,
+      theme: "dark",
+    }
+  );
+};
 
   const markAsDone = (id: number) => {
     // For now just remove it (you can later move to a "completed" list)
@@ -126,9 +137,20 @@ const addToSaved = (exercise: Exercise) => {
   });
 };
 
-  const removeFromSaved = (id: number) => {
-    setSaved((prev) => prev.filter((e) => e.id !== id));
-  };
+const removeFromSaved = (id: number) => {
+  const exercise = saved.find((e) => e.id === id);
+
+  setSaved((prev) => prev.filter((e) => e.id !== id));
+
+  toast.success(
+    exercise ? `${exercise.name} removed from saved` : "Exercise removed",
+    {
+      position: "top-right",
+      autoClose: 2500,
+      theme: "dark",
+    }
+  );
+};
 
   const isInTodayPlan = (id: number) => todayPlan.some((e) => e.id === id);
   const isInSaved = (id: number) => saved.some((e) => e.id === id);

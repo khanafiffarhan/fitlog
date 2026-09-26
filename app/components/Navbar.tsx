@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Dumbbell, Menu, X } from "lucide-react";
 import { useWorkout } from "@/context/WorkoutContext";
+import Image from "next/image";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -29,6 +30,17 @@ export default function Navbar() {
         </button>
         <Link href="/" className="flex items-center gap-2" onClick={closeMenu}>
           {/* <Dumbbell size={21} strokeWidth={2.5} className="text-[#c8ff24]" /> */}
+          <div className="relative ">
+            <Image
+              src="/logo.png"
+              alt="Anatomical figure training on a gym machine"
+              width={30}
+              height={30}
+              priority
+             
+              // className="object-contain"
+            />
+          </div>
           <span className="text-[18px] font-bold tracking-tight text-[#e9e9eb]">
             FITLOG
           </span>
@@ -83,7 +95,6 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Hamburger Button */}
-        
       </div>
 
       {/* Mobile Menu */}

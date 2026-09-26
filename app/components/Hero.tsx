@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#0e0f14] px-4 py-6 sm:px-6 lg:px-8">
+    <main className="bg-[#0e0f14] px-4 py-6 sm:px-6 lg:px-8">
       <section className="mx-auto flex min-h-[590px] max-w-[1120px] flex-col overflow-hidden rounded-2xl border border-[#30323c] bg-[#191b23] md:flex-row">
         {/* Left: Hero content */}
         <div className="flex flex-1 flex-col justify-center px-6 py-12 sm:px-10 lg:px-12">
