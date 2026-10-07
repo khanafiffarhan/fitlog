@@ -5,6 +5,7 @@
 FitLog helps you discover exercises, build a focused daily plan (max 5 lifts), track progress, and save favorites — all in a clean, dark-themed interface.
 
 ---
+LIVE LINK : https://fitlognew.netlify.app/
 
 ## ✨ Key Features
 
