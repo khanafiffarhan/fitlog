@@ -18,6 +18,13 @@ LIVE LINK : https://fitlognew.netlify.app/
 | 5 | **Live Stats & Sorting** | Instant totals for exercises, minutes & calories. Sort your plan by duration, calories, rating or name. |
 
 ---
+  **✨ dependencies"**
+
+    "lucide-react": "^1.48.0",
+    "next": "16.3.5",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-toastify": "^11.1.0"
 
 ## 🛠️ Tech Stack
 
